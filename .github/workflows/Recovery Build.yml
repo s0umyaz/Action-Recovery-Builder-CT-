@@ -4,23 +4,23 @@ on:
   workflow_dispatch:
     inputs:
       MANIFEST_URL:
-        description: 'MANIFEST_URL (if using SSH keys, use git@github.com:repo URL format)'
+        description: 'git@github.com:minimal-manifest-twrp/platform_manifest_twrp_aosp.git'
         required: true
         default: 'https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git'
       MANIFEST_BRANCH:
-        description: 'MANIFEST_BRANCH'
+        description: 'twrp-12.1'
         required: true
         default: 'twrp-12.1'
       DEVICE_TREE_URL:
-        description: 'DEVICE_TREE_URL'
+        description: 'git@github.com:s0umyaz/android_device__lahaina.git'
         required: true
         default: 'https://github.com/TeamWin/android_device_asus_I003D'
       DEVICE_TREE_BRANCH:
-        description: 'DEVICE_TREE_BRANCH'
+        description: 'twrp-12.1'
         required: true
         default: 'android-12.1'
       DEVICE_PATH:
-        description: 'DEVICE_PATH'
+        description: 'device/qualcomm/lahaina'
         required: true
         default: 'device/asus/I003D'
       COMMON_TREE_URL:
@@ -30,15 +30,15 @@ on:
         description: 'COMMON_PATH (if no common tree, leave blank)'
         required: false
       DEVICE_NAME:
-        description: 'DEVICE_NAME'
+        description: 'lahaina'
         required: true
         default: 'I003D'
       MAKEFILE_NAME:
-        description: 'MAKEFILE_NAME'
+        description: 'twrp_lahaina'
         required: true
         default: 'twrp_I003D'
       BUILD_TARGET:
-        description: 'BUILD_TARGET'
+        description: 'boot'
         required: true
         default: 'recovery'
 
@@ -100,8 +100,8 @@ jobs:
         mkdir workspace
         cd workspace
         echo "workspace-folder=$(pwd)" >> $GITHUB_OUTPUT
-        git config --global user.name "Captain Throwback"
-        git config --global user.email "captainthrowback@hotmail.com"
+        git config --global user.name "s0umyaz"
+        git config --global user.email "soumyadeepghosh617@gmail.com"
         repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
       id: pwd
           
