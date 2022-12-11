@@ -4,25 +4,25 @@ on:
   workflow_dispatch:
     inputs:
       MANIFEST_URL:
-        description: 'git@github.com:minimal-manifest-twrp/platform_manifest_twrp_aosp.git'
+        description: 'git@github.com:SHRP/manifest.git'
         required: true
-        default: 'https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git'
+        default: 'git@github.com:SHRP/manifest.git'
       MANIFEST_BRANCH:
-        description: 'twrp-12.1'
+        description: 'shrp-12.1'
         required: true
-        default: 'twrp-12.1'
+        default: 'shrp-12.1'
       DEVICE_TREE_URL:
-        description: 'git@github.com:s0umyaz/android_device__lahaina.git'
+        description: 'git@github.com:s0umyaz/shrp_xiaomi_sweet.git'
         required: true
-        default: 'https://github.com/TeamWin/android_device_asus_I003D'
+        default: 'git@github.com:s0umyaz/shrp_xiaomi_sweet.git'
       DEVICE_TREE_BRANCH:
-        description: 'twrp-12.1'
+        description: 'android-12.1'
         required: true
         default: 'android-12.1'
       DEVICE_PATH:
-        description: 'device/qualcomm/lahaina'
+        description: 'device/xiaomi/sweet'
         required: true
-        default: 'device/asus/I003D'
+        default: 'device/xiaomi/sweet'
       COMMON_TREE_URL:
         description: 'COMMON_TREE_URL (if no common tree, leave blank)'
         required: false
@@ -30,15 +30,15 @@ on:
         description: 'COMMON_PATH (if no common tree, leave blank)'
         required: false
       DEVICE_NAME:
-        description: 'lahaina'
+        description: 'sweet'
         required: true
-        default: 'I003D'
+        default: 'sweet'
       MAKEFILE_NAME:
-        description: 'twrp_lahaina'
+        description: 'twrp_sweet'
         required: true
-        default: 'twrp_I003D'
+        default: 'twrp_sweet'
       BUILD_TARGET:
-        description: 'boot'
+        description: 'recovery'
         required: true
         default: 'recovery'
 
